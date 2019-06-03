@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  sandbox:
+    build:
+      context: .
+    entrypoint: ''
+    ports:
+      - '4000:4000'
+    volumes:
+      - ruby_101-sandbox-sync:/workdir:nocopy
+    env_file:
+      - '.env'
+    stdin_open: true
+    tty: true
+
+volumes:
+  ruby_101-sandbox-sync:
+    external: true
